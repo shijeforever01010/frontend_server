@@ -21,6 +21,10 @@ func (s *UserServer) SignIn(context *frontend.Context) ([]byte, error) {
 				Name:     "Password",
 				Type:     server.InputPassword,
 				Property: "Password",
+				Link: &server.Link{
+					Href: "/user/forgot_password",
+					Text: "(I have forgotten my password)",
+				},
 			}},
 		}
 		form.Apply(context)
